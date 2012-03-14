@@ -40,11 +40,11 @@
       </div>
     </div>
 
-    <div id="footer">
+    <footer>
       <div class="content">
 <?php require $this->out_file("views/footer.php"); ?>
      </div>
-    </div>
+    </footer>
 
   </body>
 </html>

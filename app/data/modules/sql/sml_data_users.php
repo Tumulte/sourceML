@@ -252,6 +252,7 @@
       $user_dir = $env->path("content")."uploads/".(isset($user) ? $user : $this->_user["id"]);
       if(!file_exists($user_dir)) @mkdir($user_dir);
       return file_exists($user_dir);
+      //return true;
     }
 
   }

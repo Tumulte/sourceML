@@ -5,15 +5,14 @@
 </p>
 
 <p>
-  <?= $this->config("version") ?>
 <?php if(!($user = $this->user())) : ?>
-  | <a href="<?= $this->url("users/identification") ?>">s'identifier</a>
+  <a href="<?= $this->url("users/identification") ?>">s'identifier</a>
 <?php else : ?>
-  | Bienvenue <strong><?= $user["login"] ?></strong>
-  | <a href="<?= $this->url("users/compte") ?>">compte</a>
+  Bienvenue <strong><?= $user["login"] ?></strong>
+  <a href="<?= $this->url("users/compte") ?>">Gestion contenu</a>
 <?php if($this->status_ok("admin")) : ?>
-  | <a href="<?= $this->url("admin") ?>">admin</a>
+  <a href="<?= $this->url("admin") ?>">admin</a>
 <?php endif; ?>
-  | <a href="<?= $this->url("users/identification/logout") ?>">deconnexion</a>
+  <a href="<?= $this->url("users/identification/logout") ?>">deconnexion</a>
 <?php endif; ?>
 </p>
