@@ -17,7 +17,7 @@
   # installation a la racine du site :
   # $PATHES["web"] = "/";
 
-  $PATHES["web"] = "/sourceml/";
+  $PATHES["web"] = "/sourceML_perso/";
 
 
 
@@ -51,14 +51,14 @@
   # "mysql", "sqlite" ou "xml"
 
   # --------------------------- MYSQL
-/*
+
   $bdd["sgbd"] = "mysql";
   $bdd["host"] = "localhost";
   $bdd["base"] = "sourceml";
   $bdd["table_prefix"] = "sml_";
-  $bdd["user"] = "mysql_user";
-  $bdd["password"] = "mysql_password";
-*/
+  $bdd["user"] = "sourceml";
+  $bdd["password"] = "sourceml";
+
   # --------------------------- SQLITE
 /*
   $bdd["sgbd"] = "sqlite";
@@ -67,12 +67,12 @@
   $bdd["table_prefix"] = "sml_";
 */
   # --------------------------- XML
-
+/*
   $bdd["sgbd"] = "xml";
   $bdd["host"] = "content/data/xml";
   $bdd["base"] = "sourceml";
   $bdd["table_prefix"] = "sml_";
-
+ */
   # --------------------------------------------------------------
   #                                     upgrade de la base donnees
   #
