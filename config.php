@@ -17,7 +17,7 @@
   # installation a la racine du site :
   # $PATHES["web"] = "/";
 
-  $PATHES["web"] = "/sourceml/";
+  $PATHES["web"] = "/sourceML_perso/";
 
 
 
