@@ -17,7 +17,7 @@
   # installation a la racine du site :
   # $PATHES["web"] = "/";
 
-  $PATHES["web"] = "/sourceml/";
+  $PATHES["web"] = "/sourceML_perso/";
 
 
 
@@ -50,7 +50,11 @@
   #                                                base de donnees
   # "mysql", "sqlite" ou "xml"
 
+<<<<<<< HEAD
  # --------------------------- MYSQL
+=======
+  # --------------------------- MYSQL
+>>>>>>> b65c1c7575efdaa65e86de785fdb90961100f546
 
   $bdd["sgbd"] = "mysql";
   $bdd["host"] = "localhost";
