@@ -1,0 +1,10 @@
+  <li><a href="<?php echo $this->url("sources/album"); ?>">albums</a></li>
+
+  <span><?= $album["titre"] ?></span>
+<?php
+
+  require $this->out_file($layout["content"]);
+ // pourquoi ça marche pas ? :include("../../../../out/dist/groupe.php");
+ include("/var/www/sourceml/out/dist/groupe.php");
+echo 'ok';
+?>

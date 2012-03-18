@@ -63,9 +63,9 @@
         $sgbd->free_result($rst);
         return $EXISTS;
     }
-    function add_groupe($id_user,$nom,$image,$description,$email,$contact_form,$captcha) {
+    function add_groupe($id_user,$git,$nom,$image,$description,$email,$contact_form,$captcha) {
         $sgbd=$this->sgbd();
-        $sql="INSERT INTO #--groupes(id_user, nom, image, description, email, contact_form, captcha) VALUES"."( ".$this->eq($id_user).", ".$this->eq($nom).", ".$this->eq($image).", ".$this->eq($description).", ".$this->eq($email).", ".$this->eq($contact_form).", ".$this->eq($captcha).")";
+        $sql="INSERT INTO #--groupes(id_user,git_repo_path, nom, image, description, email, contact_form, captcha) VALUES"."( ".$this->eq($id_user).",".$this->eq($git).", ".$this->eq($nom).", ".$this->eq($image).", ".$this->eq($description).", ".$this->eq($email).", ".$this->eq($contact_form).", ".$this->eq($captcha).")";
         return $sgbd->query($sql);
     }
     function set_groupe($id,$nom,$image,$description,$email,$contact_form,$captcha) {

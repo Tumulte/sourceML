@@ -30,8 +30,6 @@
             $env->erreur("Impossible de lire la liste des groupes");
     }
     function add(&$env) {
-      echo ok;
-    die;
         $data=$env->data();
         if($data->check_user_uploads_dir()) {
             $web_path=$env->path("web");
@@ -44,7 +42,7 @@
                         if(($exists=$data->groupe_exists($_POST["nom"]))!==false) {
                             if(!$_POST["contact_form"]||trim($_POST["email"])) {
                                 if($exists==0) {
-                                    if($data->add_groupe($this->user["id"],$_POST["nom"],$this->user["id"]."/".$image,$_POST["description"],$_POST["email"],$_POST["contact_form"]?1:0,$_POST["captcha"]?1:0)) 
+                                    if($data->add_groupe($this->user["id"],$_POST["git"],$_POST["nom"],$this->user["id"]."/".$image,$_POST["description"],$_POST["email"],$_POST["contact_form"]?1:0,$_POST["captcha"]?1:0)) 
                                         $env->redirect($env->url("users/groupes"),"le groupe a &eacute;t&eacute; ajout&eacute;");
                                     else 
                                         $env->erreur("Impossible d'ajouter le groupe");
@@ -78,6 +76,7 @@
                 $groupe=$env->out("groupe");
                 if($_POST) {
                     $id=$groupe["id"];
+                    $id=$groupe["git"];
                     $nom=$groupe["nom"];
                     $image=$groupe["image"];
                     $_POST["image"]=$image?$_SESSION["upload_dir"]."/".$image:"";
