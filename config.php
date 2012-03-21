@@ -17,7 +17,7 @@
   # installation a la racine du site :
   # $PATHES["web"] = "/";
 
-  $PATHES["web"] = "/sourceML_perso/";
+  $PATHES["web"] = "/sourceml/";
 
 
 
@@ -46,16 +46,13 @@
   # nom du dossier (sans chemin) du template par defaut
   $PATHES["dist_out"] = "dist";
 
+/*
   # --------------------------------------------------------------
   #                                                base de donnees
   # "mysql", "sqlite" ou "xml"
 
-<<<<<<< HEAD
  # --------------------------- MYSQL
-=======
-  # --------------------------- MYSQL
->>>>>>> b65c1c7575efdaa65e86de785fdb90961100f546
-
+ */
   $bdd["sgbd"] = "mysql";
   $bdd["host"] = "localhost";
   $bdd["base"] = "sourceml";

@@ -3,7 +3,9 @@
   $repo_path= $this->out["groupe"]["git_repo_path"];
 
   $repo = Git::open('/var/www/repogit/Thewoodofgodldeaxe');   // or, new GitRepo(...);
-  var_dump($repo->run('log'));
+  //http://www.opensource.apple.com/source/Git/Git-19/src/git-htmldocs/pretty-formats.txt
+  //hash, commiter name, Note, Date, Sujet
+  echo $repo->run('log --pretty=format:"%h,%cn,%N,%cD,%s<br>"');
 
 
 
