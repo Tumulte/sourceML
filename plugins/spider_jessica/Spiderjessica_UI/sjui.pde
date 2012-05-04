@@ -1,51 +1,78 @@
-//variables
-ArrayList<float[]> coordinates_array;
+//Variables
+int cloudSize = 400;
+Object[] cloudArray = new Object[20];
+int[] coordinateArray = new int[4];
+int[] n = 0;
 
-//main stroke color
-int stroke_color = 255;
-
-void setup()
-{
-  //size(screen.width, screen.height);
-  size(500,500);
-  frameRate(1);
-  stroke(200);
-  noFill();
-  strokeWeight(0.5);
-  coordinates_array = new ArrayList<float[]>();
-}
-//line array creator
-float[] linecloud(){
-  float[] coordinates  = {random(0,500), random(0,500),random(0,500), random(0,500)};
-  coordinates_array.add(coordinates);
-  return coordinates;
+void setup() {
+  frameRate(5);
+  size(400, 400);
+  background(0);
+  fill(255);
+  stroke(255);
+  lineCloud = new lineCloud();
+/*
+  for(i=0; i<20 ; i++){
+      if(i==0){
+          coordinateArray[0] = random(0,cloudSize);
+          coordinateArray[1] = random(0,cloudSize);
+          coordinateArray[2] = random(0,cloudSize);
+          coordinateArray[3] = random(0,cloudSize);
+      }
+      else if (i % 2 == 0){
+          coordinateArray[0] = coordinateArray[2];
+          coordinateArray[1] = coordinateArray[3];
+          coordinateArray[2] = random(0,cloudSize);
+          coordinateArray[3] = random(0,cloudSize);
+      }
+      else{
+          coordinateArray[0] = coordinateArray[2];
+          coordinateArray[1] = coordinateArray[3];
+          coordinateArray[2] = random(0,cloudSize);
+          coordinateArray[3] = random(0,cloudSize);
+      }
+      cloudArray[i] = lineCloud.show(coordinateArray[0],coordinateArray[1], coordinateArray[2], coordinateArray[3], 155);
+  }
+  */
 }
 
 void draw(){
-  linecloud();
-  background(0);
-  stroke(255);
-  for(int i=0; i<coordinates_array.size(); i++) {
-    float[] coordinates = coordinates_array.get(i);
-    //text(i,i*15,10);
-    int  h=i-1;
-    if(h<0) continue;
-    float[] coordinates_h = coordinates_array.get(h);
 
-    stroke_color -= 5*i;
-    if(stroke_color < 0){
-        stroke_color = 0;
-    }
+   n++;
+   if(n>19){
+      n=0;
+   }
+      if(n==0){
+          coordinateArray[0] = random(0,cloudSize);
+          coordinateArray[1] = random(0,cloudSize);
+          coordinateArray[2] = random(0,cloudSize);
+          coordinateArray[3] = random(0,cloudSize);
+      }
+      else if (n % 2 == 0){
+          coordinateArray[0] = coordinateArray[2];
+          coordinateArray[1] = coordinateArray[3];
+          coordinateArray[2] = random(0,cloudSize);
+          coordinateArray[3] = random(0,cloudSize);
+      }
+      else{
+          coordinateArray[0] = coordinateArray[2];
+          coordinateArray[1] = coordinateArray[3];
+          coordinateArray[2] = random(0,cloudSize);
+          coordinateArray[3] = random(0,cloudSize);
+      }
+      cloudArray[n] = lineCloud.show(coordinateArray[0],coordinateArray[1], coordinateArray[2], coordinateArray[3], 155);
+      
+}
 
-    stroke(stroke_color);
-    if(i==0){
-       line(coordinates[0], coordinates[1], coordinates[2], coordinates[3]);
-    }
-    else if (i % 2 == 0){
-       line(coordinates_h[2], coordinates_h[3], coordinates[0], coordinates[1]);
-    }
-    else{
-       line(coordinates_h[0], coordinates_h[1], coordinates[2], coordinates[3]);
-    }
+class lineCloud{
+
+  int cX1,cY1,cX2,cY2, cColour;
+
+  lineCloud(){
+  }
+
+  void show(cX1,cY1,cX2,cY2, cColour){
+      line(cX1,cY1,cX2,cY2);
+      stroke(cColour);
   }
 }
